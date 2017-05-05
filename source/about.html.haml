@@ -1,0 +1,57 @@
+---
+pageable: true
+per_page: 6
+---
+
+%header.main-header{cover}
+  %nav.main-nav.overlay.clearfix
+    - if blog_settings.logo.present?
+      %a.blog-logo{href: home_path}
+        = image_tag blog_settings.logo, alt: 'Blog Logo'
+    - if blog_settings.navigation
+      %a.menu-button.icon-menu{href: '#'}
+        %span.word Menu
+  .vertical
+    .main-header-content.inner
+      %h1.page-title
+        = link_to '/' do
+          = image_tag 'avatar_20150309.jpg', class: 'rounded'
+        %br
+        = blog_settings.name
+      %h2.page-description= blog_settings.description
+  %a.scroll-down.icon-arrow-left{href: '#content', data: {offset: '-45'}}
+    %span.hidden Scroll Down
+
+%main#content.content{role: :main}
+  %article.post
+    %header.post-header
+      %h1.post-title= "Hi,"
+    %section.post-content
+      %p
+        = "I'm a Ruby on Rails dev. based in Lyon, France. Aside from coding, I'm a happy/busy father of two lovely boys."
+        %br
+
+      %ul.no-bullet
+        %li
+          %i.fa.fa-twitter
+          = link_to "Follow me", "https://twitter.com/gbarillot"
+        %li
+          %i.fa.fa-github
+          = link_to "Grab some code", "https://github.com/gbarillot"
+        %li
+          %i.fa.fa-envelope
+          :javascript
+            document.write('<a href="ma');
+            document.write('ilto');
+            document.write(':&#103;&#98;&#97;&#114;&#105;&#108;&#108;&#111;&#116;');
+            document.write('@');
+            document.write('&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">');
+            document.write('Send me a message');
+            document.write('<\/a>');
+
+          %noscript
+            = "&#103;&#98;&#97;&#114;&#105;&#108;&#108;&#111;&#116; at &#103;&#109;&#97;&#105;&#108; dot &#99;&#111;&#109;"
+
+        %li
+          %i.fa.fa-linkedin
+          = link_to "What I did, what I'm doing now...", "https://fr.linkedin.com/pub/guillaume-barillot/27/204/4b9"

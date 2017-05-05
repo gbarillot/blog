@@ -1,0 +1,23 @@
+@import 'vendor/casper';
+@import 'syntax';
+
+// Overwrite some styles from casper.css
+pre {
+  background: transparent;
+  border-style: none;
+  padding: initial;
+}
+
+.rounded {
+  border-radius: 50%;
+  width: 150px;
+}
+.main-header-content.inner h1.page-title a {
+  text-decoration: none !important;
+}
+ul.no-bullet{
+  list-style-type: none;
+}
+.no-cover {
+	background-color: #fff !important;
+}
