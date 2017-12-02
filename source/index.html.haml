@@ -16,12 +16,11 @@ per_page: 6
       %h1.page-title
         = link_to '/' do
           = image_tag 'avatar_20150309.jpg', class: 'rounded'
-        %br
+        %br        
         = blog_settings.name
       %h2.page-description= blog_settings.description
   %a.scroll-down.icon-arrow-left{href: '#content', data: {offset: '-45'}}
     %span.hidden Scroll Down
 
 %main#content.content{role: :main}
-  = partial(:page_articles,
-            locals: { page_articles: page_articles, paginate: paginate })
+  = partial(:page_articles, locals: { page_articles: page_articles, paginate: paginate })

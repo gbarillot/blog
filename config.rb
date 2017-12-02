@@ -35,7 +35,7 @@ set :casper, {
     name: 'I build stuff',
     description: '~',
     date_format: '%d %B %Y',
-    navigation: true,
+    navigation: false,
     logo: nil # Optional
   },
   author: {
@@ -45,10 +45,10 @@ set :casper, {
     website: nil, # Optional
     gravatar_email: nil # Optional
   },
-  navigation: {
-    "Home" => "/",
-    "About" => "/about"
-  }
+#  navigation: {
+#    "Home" => "/",
+#    "About" => "/about"
+#  }
 }
 
 page '/feed.xml', layout: false

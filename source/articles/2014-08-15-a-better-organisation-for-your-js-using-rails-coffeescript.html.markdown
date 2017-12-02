@@ -1,6 +1,6 @@
 ---
 title: A better organisation for JS/Jquery code base using Rails and Coffeescript
-date: 2015-08-15 08:59 UTC
+date: 2014-08-15 08:59 UTC
 layout: post
 tags:
 - ruby-on-rails

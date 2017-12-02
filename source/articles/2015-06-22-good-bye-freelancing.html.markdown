@@ -7,7 +7,7 @@ tags:
 ---
 
 
-It's been now 3 months since I have been officialy hired, 3 months that I'm not a freelancer no more.
+It's been now 3 months since I have been officialy hired, 3 months that I'm no longer a freelancer.
 In a way, it's kinda funny that the exact same things that really thrilled me, are also those
 that just bored me, at the same time. First of all was project switching. I'm talking about working for bigger
 companies using legacy PHP 4 code one month, and a few days later for startups using cutting edge technologies. Within 6 years I designed and built brand new pretty apps from scratch and been dropped in the middle of some systems I would have never built this way if I could, and had no choice but to deal with it. I did some server administration stuff, testing, HTML/CSS integration, Javascript, Angular, Rails. I worked with CMS like Wordpress, Joomla, E-Commerce with Prestashop... and finally ended up completely exhausted.

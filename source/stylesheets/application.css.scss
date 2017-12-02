@@ -6,6 +6,10 @@ pre {
   background: transparent;
   border-style: none;
   padding: initial;
+	overflow: auto;
+}
+.code {
+	overflow: auto;
 }
 
 .rounded {
@@ -20,4 +24,26 @@ ul.no-bullet{
 }
 .no-cover {
 	background-color: #fff !important;
+}
+.social {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+	.social {
+		position: relative;
+		width: 100%;
+		text-align: center;
+		margin: auto;
+	}
+	.social ul {
+		width: 100%;
+		text-align: center;
+		margin-left: -20px;
+	}
+	.social li {
+		display: inline-block;
+		margin-right: 20px;
+	}
 }
