@@ -3,7 +3,9 @@ Just my personnal Blog : [http://www.guillaume-barillot.com](http://www.guillaum
 # Notes:
 
 - Start localhost server for writing:
+```
 cd /root_path/to/project && middleman server
+```
 
 - Create a new blog post :
 middleman article "The blog post title"
