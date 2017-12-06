@@ -7,7 +7,7 @@
     %meta{name: :viewport, content: 'width=device-width, initial-scale=1.0'}
     %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge'}
     %meta{name: 'HandheldFriendly', content: 'True'}
-    %meta{name: 'google-site-verification', content:"UlIFhV8FstDJpoRovjvM0LzmXqguqwhyqNDL5DyKaGQ"} 
+    %meta{name: 'google-site-verification', content:"UlIFhV8FstDJpoRovjvM0LzmXqguqwhyqNDL5DyKaGQ"}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     = favicon_tag 'images/favicon.ico'
     = stylesheet_link_tag :application
@@ -18,7 +18,7 @@
     = partial(:navigation)
 
     .site-wrapper
-      .social 
+      .social
         %ul.no-bullet
           %li
             = link_to "https://twitter.com/gbarillot", target: '_blank' do
@@ -45,7 +45,6 @@
             = link_to "https://fr.linkedin.com/pub/guillaume-barillot/27/204/4b9", target: '_blank' do
               %i.fa.fa-linkedin
        
-      
       = yield
 
       %footer.site-footer.clearfix
@@ -69,4 +68,3 @@
 
       ga('create', 'UA-37821599-1', 'auto');
       ga('send', 'pageview');
-
