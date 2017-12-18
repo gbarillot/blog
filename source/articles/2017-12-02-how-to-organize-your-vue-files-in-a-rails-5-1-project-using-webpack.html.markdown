@@ -9,9 +9,9 @@ tags:
 So, you're a Rails developer, and you started to play with Vue (maybe using the CDN / ES5 way?), everything looks so exciting, you're even thinking about using it in your next project. Great! And then problems start to pop up. How do I structure my files? How do I implement I18n? What about authentication? Pagination?... Surprisingly,
 I did not found a lot of resources related to Vue+Webpack+Rails, so I thought it might be a good idea to share some of the solutions I came up with.   
 
-**You'll find a demo app** repository [here](https://github.com/gbarillot/boilerplate), so you could play with the code and test it out.
+**You'll find a demo app** repository [here](https://github.com/gbarillot/rails-vue-demo-app), so you could play with the code and test it out.
 
-*Disclaimer*: I am not a "Javascript developer". I'm a Python -> PHP -> Ruby/Rails dev for 15 years, and this blog post is a highly opinionated way of solving common problems using a Rails 5.1+ back-end stack, primarily targeted for Back-end devs. who want to start building a SPA without being totally lost.
+*Disclaimer*: I am not a "Javascript developer". I'm a Python -> PHP -> Ruby/Rails dev for 15 years, and this blog post is a highly opinionated way of solving common problems using a Rails 5.1+ back-end stack, primarily targeted for Back-end devs. who want to start building a SPA without being totally lost. If you see something atrocious in my code, feel free to shoot me an Email (or even better, ask for a PR on the demo repo). Thanks.
 
 ## 1. The specs
 
@@ -79,7 +79,7 @@ You should now have a "javascript" directory inside of "/app" and (awesome news!
 
 #### 3.2 Loading the app
 
-Let's load this app using [application.html.erb](https://github.com/gbarillot/boilerplate/blob/master/app/views/application.html.erb), and since we're loading server side stuff, let's also load translations using a [small helper](https://github.com/gbarillot/boilerplate/blob/master/app/helpers/application_helper.rb) that will translate the YAML file to JSON, so translations will be usable from Javascript. Right, doing it this way will imply a full page reload if the user changes its locale, but on the other hand you only load the current locale translations, and in the real world this is really important.
+Let's load this app using [application.html.erb](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/application.html.erb), and since we're loading server side stuff, let's also load translations using a [small helper](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/helpers/application_helper.rb) that will translate the YAML file to JSON, so translations will be usable from Javascript. Right, doing it this way will imply a full page reload if the user changes its locale, but on the other hand you only load the current locale translations, and in the real world this is really important.
 
 #### 3.3 Server side routing
 At the very beginning of the project, routes are quite simple :
@@ -123,7 +123,7 @@ In a traditional app, you would add and "admin" namespace in the controllers, an
         /routes.js
 ```
 
-Basically, what we're doing here is to create a totally separated "app", from a JS point of view. Doing it this way, you will load the Admin related stuff, and *only* the admin stuff. That means: routes, components, stores and while we're at it: translations. How do we load this JS app? Quite like we did for the front-end, but this time we'll use [admin.html.erb](https://github.com/gbarillot/boilerplate/blob/master/app/views/admin.html.erb).
+Basically, what we're doing here is to create a totally separated "app", from a JS point of view. Doing it this way, you will load the Admin related stuff, and *only* the admin stuff. That means: routes, components, stores and while we're at it: translations. How do we load this JS app? Quite like we did for the front-end, but this time we'll use [admin.html.erb](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/admin.html.erb).
 
 #### 3.6 File names conventions
 
@@ -147,20 +147,20 @@ Feels familiar, isn't it? Classical names apply perfectly here, too. Files like 
 
 If you don't know what Vuex is, I would highly recommend to watch those [2](https://youtu.be/dkFWOsKrPAI) [videos](https://youtu.be/kRI4YLMjgHQ). So, yes, let's use Vuex to handle all AJAX calls, as well as all state loads and modifications. If components may be seen like "views + behaviour", you can see a store quite like "controller + model". Controller because it handles the requests, and Model because it is manipulating the Data. Ok, ok, I know it's silly to try translating 1:1 Rails MVC to Vue, but if it may help you to understand how it globally works, let's see it this way to get started.
 
-Ok, so, what's in a Store? Basically: [this](https://github.com/gbarillot/boilerplate/blob/master/app/javascript/packs/vuex/stores/musician_store.js). Aside from the obvious actions + mutations, you will notice I added 2 extra mutations: progress and errors. This lead us directly to the next section:
+Ok, so, what's in a Store? Basically: [this](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js). Aside from the obvious actions + mutations, you will notice I added 2 extra mutations: progress and errors. This lead us directly to the next section:
 
 #### 3.8 User interaction
 
 One thing that is quite disturbing working with an SPA is that the browser is not helping us. There's no spinner at the top of the tab, and the page is not passing through the "click -> spinner is spinning -> refresh -> blank page -> repaint" cycle. Nonetheless, we have to take care of our user, and let him understand what's going on when submitting a form. That's why I created 2 extra mutations in stores that are using a form:
 
 - progress: variable to track the current state of the request (start / loading / success / failed)
-- errors: calls a [little helper](https://github.com/gbarillot/boilerplate/blob/master/app/javascript/packs/admin/helpers/index.js) to show up form errors
+- errors: calls a [little helper](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/helpers/index.js) to show up form errors
 
 A bit of CSS on top of that and now your users understand what's happening. You also avoid multiple form submissions, and this is not just a designer's whim.
 
 #### 3.9 Kaminari
 
-Pagination is made using a [component](https://github.com/gbarillot/boilerplate/blob/master/app/javascript/packs/admin/components/shared/_pagination.vue), client side, as well as adding a short snippet in the server side generated [JSON](https://github.com/gbarillot/boilerplate/blob/master/app/views/api/admin/musicians/index.json.jbuilder). Drop this component in a "/components/shared" directory, and now all you have to do is calling this in a parent component when you need it:
+Pagination is made using a [component](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/shared/_pagination.vue), client side, as well as adding a short snippet in the server side generated [JSON](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/api/admin/musicians/index.json.jbuilder). Drop this component in a "/components/shared" directory, and now all you have to do is calling this in a parent component when you need it:
 
 ```
 <pagination :pagination='pagination'></pagination>
@@ -177,20 +177,20 @@ Quite like for pagination, the base idea is to sequentially:
 - Request data from the server using this URL / Query string
 - Finally, mutate the state with the data you just got back from server
 
-What is a bit tricky here is that Vue sees query strings using arrays as JS Objects, so I had to tweak query string construction a little bit. In the end I got it working, now you just have to follow the steps to reuse [this component](https://github.com/gbarillot/boilerplate/blob/master/app/javascript/packs/admin/components/musicians/_filters.vue) to fit your needs.
+What is a bit tricky here is that Vue sees query strings using arrays as JS Objects, so I had to tweak query string construction a little bit. In the end I got it working, now you just have to follow the steps to reuse [this component](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/musicians/_filters.vue) to fit your needs.
 
 #### 3.11 ActionCable and Vue
 
-You have to set things up exactly the same way you'd do in a classical app, the only thing we're going to add here is about informing Vue when new messages are coming. This is done using an Event Bus. With this Event Bus mounted, the [chat component](https://github.com/gbarillot/boilerplate/blob/master/app/javascript/packs/admin/components/modals/chat.vue) will be notified each time there is a new event. On the other side, when you want to push new messages out, simply use the globally accessible "App" Object you created in the asset pipeline's powered [channel](https://github.com/gbarillot/boilerplate/blob/master/app/assets/javascripts/channels/chat.js).
+You have to set things up exactly the same way you'd do in a classical app, the only thing we're going to add here is about informing Vue when new messages are coming. This is done using an Event Bus. With this Event Bus mounted, the [chat component](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/modals/chat.vue) will be notified each time there is a new event. On the other side, when you want to push new messages out, simply use the globally accessible "App" Object you created in the asset pipeline's powered [channel](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/assets/javascripts/channels/chat.js).
 
 ## 4. Packing it up
 
-Wow, that's quite a lot of stuff for a blog post! I really encourage you to clone the demo [repo](https://github.com/gbarillot/boilerplate/) and play with the code.
+Wow, that's quite a lot of stuff for a blog post! I really encourage you to clone the demo [repo](https://github.com/gbarillot/rails-vue-demo-app/) and play with the code.
 
 It's now time for to summarize some thoughts about building a SPA with Rails + Vue.js + Webpacker:
 
 - **Rails is an awesome starting point for a SPA**: I read sooooo many tutorials and blog posts about configuring Webpack that I was terrified with this one question: "how and where do I actually start?". Now, with Webpacker and Yarn included right in the Framework, there's nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   
 
-- **Vue is a fabulous JS framework**: I feel like it has picked up the best ideas from React (Component based, Flux pattern) and the best ideas from Angular (templates with custom markup, eg: v-if, v-for...). Using Webpack to compile .vue files and Vuex, in the end, I managed to get something fully scalable as your code grows, and *really* maintainable with not that much of code, compared to a classical app.
+- **Vue is a fabulous JS framework**: I feel like it has picked up the best ideas from React (Component based, Flux pattern) and the best ideas from Angular (templates with custom markup, eg: v-if, v-for...). Using Webpack to compile .vue files and Vuex, in the end, I managed to get something fully scalable as my code grows, and *really* maintainable with not that much of code, compared to a classical app.
 
-- **A SPA is quite a weird beast**: The Web has not been built for SPA's, neither browser did. Simple things in the "old world" may become quite tricky very fast (pagination+ransack), as in the same time complicated things now become easy as pie (updating the other side of the UI on the fly when a variable updates in the store, for example). What I *really* appreciate is that the Javascript section is now under control. There's no longer JQuery soup boiling in the asset pipeline, with nasty and untestable bugs simmering in. If it was for one argument, it would be this one. Yes, it's worth writing a few more lines of code at the beginning. In the end, you'll win.
+- **A Single Page App is quite a weird beast**: The Web has not been built for SPA's, neither browsers were. Simple things in the "old world" may become quite tricky very fast (pagination+ransack, or even a simple form submission!), as in the same time complicated things now become easy as pie (updating the other side of the UI on the fly when a variable is updated in the store, for example). What I *really* appreciate is that the Javascript section is now under control. There's no longer JQuery soup boiling in the asset pipeline, with nasty and untestable bugs simmering in. If it was for one argument, it would be this one. Yes, it's worth writing a few more lines of code at the beginning. In the end, you'll win.
