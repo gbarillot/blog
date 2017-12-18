@@ -17,17 +17,17 @@ I did not found a lot of resources related to Vue+Webpack+Rails, so I thought it
 
 Let's start with what I really wanted for this demo project:
 
-- Sprockets is not able to deal with ES6 code, nor .vue files, we'll have to use Webpack
+- A user should be able to reload any page at any time. Same for the back button that should just work
+- I18n is important, and it should be simple. Translations files are also rapidly growing up in a
+real app, we should be able to handle this in a real world scenario
 - Pagination should work hand in hand with Kaminari
 - Authentication, to access an Admin section
 - Dynamic filters are mandatory in any Admin section, we should be able to use Ransack
-- I18n is important, and it should be simple to use. Translations files are also rapidly growing up in a
-real app, we should be able to handle this in a real world scenario
 - ActionCable is great, we should also handle it
-- A user should be able to reload any page at any time. Same for the back button that should just work.
 
 ## 2. Opinions and tools
 
+- With Sprockets not being able to deal with ES6 code nor .vue files, we'll have to use Webpack. Perfect timing, it has just been integrated in Rails a few months ago.
 - The directory tree of Javacript files should be scalable and easy to grasp. Maintainability above everything.
 - Server side generated routes must match with the ones you'd get in regular Rails app, let's avoid headaches
 - Avoid installing JS dependencies and plugins, as much as possible, except for what's officially supported/required by Vue
