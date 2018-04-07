@@ -11,8 +11,6 @@ I did not found a lot of resources related to Vue+Webpack+Rails, so I thought it
 
 **You'll find a demo app** repository [here](https://github.com/gbarillot/rails-vue-demo-app), so you could play with the code and test it out.
 
-*Disclaimer*: I am not a "Javascript developer". I'm a Python -> PHP -> Ruby/Rails dev for 15 years, and this blog post is a highly opinionated way of solving common problems using a Rails 5.1+ back-end stack, primarily targeted for Back-end devs. who want to start building a SPA without being totally lost. If you see something atrocious in my code, feel free to shoot me an Email (or even better, ask for a PR on the demo repo). Thanks.
-
 ## 1. The specs
 
 Let's start with what I really wanted for this demo project:
