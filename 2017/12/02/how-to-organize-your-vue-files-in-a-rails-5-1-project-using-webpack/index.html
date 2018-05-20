@@ -70,7 +70,7 @@ on <a href='/tag/vue/'>vue</a>
 </section>
 </header>
 <section class='post-content'><p>So, you&rsquo;re a Rails developer, and you started to play with Vue (maybe using the CDN / ES5 way?), everything looks so exciting, you&rsquo;re even thinking about using it in your next project. Great! And then problems start to pop up. How do I structure my files? How do I implement I18n? What about authentication? Pagination?&hellip; Surprisingly,
-I did not found a lot of resources related to Vue+Webpack+Rails, so I thought it might be a good idea to share some of the solutions I came up with.   </p>
+I did not found a lot of resources related to Vue + Webpack + Rails, so I thought it might be a good idea to share some of the solutions I came up with.   </p>
 
 <p><strong>You&rsquo;ll find a demo app</strong> repository <a href="https://github.com/gbarillot/rails-vue-demo-app">here</a>, so you could play with the code and test it out.</p>
 
@@ -142,7 +142,7 @@ real app, we should be able to handle this in a real world scenario</li>
 <li><p>components: will be structured quite close to what it would have been in the &ldquo;view&rdquo; rails dir, and will contains, well&hellip; components. Basically, your &ldquo;.vue&rdquo; files.</p></li>
 <li><p>filters: more or less like &ldquo;helpers&rdquo;, in the Rails world. I use it to format strings, dates&hellip; more about filters <a href="https://vuejs.org/v2/guide/filters.html">here</a>.</p></li>
 <li><p>vuex: the &ldquo;index.js&rdquo; file is used to register stores and is mostly populated with &ldquo;import&rdquo; statements. On the other hand, the stores directory hosts all, namespaced, stores.</p></li>
-<li><p>applications.js: the main JS application boot loader, where you setup what you&rsquo;re going to use in the app (router, I18n&hellip;). This is where you setup I18n, and I also use this file to setup JQuery&rsquo;s AJAX calls</p></li>
+<li><p>application.js: the main JS application boot loader, where you setup what you&rsquo;re going to use in the app (router, I18n&hellip;). This is where you setup I18n, and I also use this file to setup JQuery&rsquo;s AJAX calls</p></li>
 <li><p>routes.js: all of the routes for this app</p></li>
 </ul>
 
@@ -243,7 +243,7 @@ end
 
 <p>If you don&rsquo;t know what Vuex is, I would highly recommend to watch those <a href="https://youtu.be/dkFWOsKrPAI">2</a> <a href="https://youtu.be/kRI4YLMjgHQ">videos</a>. So, yes, let&rsquo;s use Vuex to handle all AJAX calls, as well as all state loads and modifications. If components may be seen like &ldquo;views + behaviour&rdquo;, you can see a store quite like &ldquo;controller + model&rdquo;. Controller because it handles the requests, and Model because it is manipulating the Data. Ok, ok, I know it&rsquo;s silly to try translating 1:1 Rails MVC to Vue, but if it may help you to understand how it globally works, let&rsquo;s see it this way to get started.</p>
 
-<p>Ok, so, what&rsquo;s in a Store? Basically: <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js">this</a>. Aside from the obvious actions + mutations, you will notice I added 2 extra mutations: progress and errors. This lead us directly to the next section:</p>
+<p>Ok, so, what&rsquo;s in a Store? Basically: <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js">this</a>. Aside from the obvious actions and mutations, you will sometime notice 2 extra mutations: <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/vuex/stores/musician_store.js">progress and errors</a> when I use forms. This leads us directly to the next section:</p>
 
 <h4>3.8 User interaction</h4>
 
@@ -263,7 +263,7 @@ end
 </pre></td></tr></tbody></table>
 </div>
 
-<p>(Hu hu, that&rsquo;s a lot of &ldquo;pagination&rdquo; for just one line, he? Don&rsquo;t worry, you&rsquo;ll found this pattern pretty common when passing data down to components).</p>
+<p>(Mmh, that&rsquo;s a lot of &ldquo;pagination&rdquo; for just one line. Don&rsquo;t worry, you&rsquo;ll found this pattern pretty common when passing data down to components).</p>
 
 <h4>3.10 Ransack and dynamic filters</h4>
 
