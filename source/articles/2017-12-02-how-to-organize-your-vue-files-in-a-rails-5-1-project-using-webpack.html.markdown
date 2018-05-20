@@ -7,7 +7,7 @@ tags:
 ---
 
 So, you're a Rails developer, and you started to play with Vue (maybe using the CDN / ES5 way?), everything looks so exciting, you're even thinking about using it in your next project. Great! And then problems start to pop up. How do I structure my files? How do I implement I18n? What about authentication? Pagination?... Surprisingly,
-I did not found a lot of resources related to Vue+Webpack+Rails, so I thought it might be a good idea to share some of the solutions I came up with.   
+I did not found a lot of resources related to Vue + Webpack + Rails, so I thought it might be a good idea to share some of the solutions I came up with.   
 
 **You'll find a demo app** repository [here](https://github.com/gbarillot/rails-vue-demo-app), so you could play with the code and test it out.
 
@@ -70,7 +70,7 @@ You should now have a "javascript" directory inside of "/app" and (awesome news!
 
 - vuex: the "index.js" file is used to register stores and is mostly populated with "import" statements. On the other hand, the stores directory hosts all, namespaced, stores.
 
-- applications.js: the main JS application boot loader, where you setup what you're going to use in the app (router, I18n...). This is where you setup I18n, and I also use this file to setup JQuery's AJAX calls
+- application.js: the main JS application boot loader, where you setup what you're going to use in the app (router, I18n...). This is where you setup I18n, and I also use this file to setup JQuery's AJAX calls
 
 - routes.js: all of the routes for this app
 
@@ -145,7 +145,7 @@ Feels familiar, isn't it? Classical names apply perfectly here, too. Files like 
 
 If you don't know what Vuex is, I would highly recommend to watch those [2](https://youtu.be/dkFWOsKrPAI) [videos](https://youtu.be/kRI4YLMjgHQ). So, yes, let's use Vuex to handle all AJAX calls, as well as all state loads and modifications. If components may be seen like "views + behaviour", you can see a store quite like "controller + model". Controller because it handles the requests, and Model because it is manipulating the Data. Ok, ok, I know it's silly to try translating 1:1 Rails MVC to Vue, but if it may help you to understand how it globally works, let's see it this way to get started.
 
-Ok, so, what's in a Store? Basically: [this](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js). Aside from the obvious actions + mutations, you will notice I added 2 extra mutations: progress and errors. This lead us directly to the next section:
+Ok, so, what's in a Store? Basically: [this](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js). Aside from the obvious actions and mutations, you will sometime notice 2 extra mutations: [progress and errors](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/vuex/stores/musician_store.js) when I use forms. This leads us directly to the next section:
 
 #### 3.8 User interaction
 
@@ -164,7 +164,7 @@ Pagination is made using a [component](https://github.com/gbarillot/rails-vue-de
 <pagination :pagination='pagination'></pagination>
 ```
 
-(Hu hu, that's a lot of "pagination" for just one line, he? Don't worry, you'll found this pattern pretty common when passing data down to components).
+(Mmh, that's a lot of "pagination" for just one line. Don't worry, you'll found this pattern pretty common when passing data down to components).
 
 #### 3.10 Ransack and dynamic filters
 
