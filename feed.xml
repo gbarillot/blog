@@ -10,11 +10,11 @@
     <name>Guillaume</name>
   </author>
   <entry>
-    <title>How to organize your Vue files in a Rails project using Webpack</title>
+    <title>How to organize a Vue project in a Rails app using Webpack</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/"/>
     <id>http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/</id>
     <published>2017-12-02T18:47:00+01:00</published>
-    <updated>2018-05-21T09:53:29+02:00</updated>
+    <updated>2018-05-21T09:55:31+02:00</updated>
     <author>
       <name>Guillaume</name>
     </author>
