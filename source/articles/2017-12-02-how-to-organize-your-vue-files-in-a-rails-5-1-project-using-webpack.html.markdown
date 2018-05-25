@@ -1,5 +1,5 @@
 ---
-title: How to organize your Vue files in a Rails 5.1 project using Webpack
+title: How to organize a Vue app in a Rails project using Webpack
 date: 2017-12-02 17:47 UTC
 layout: post
 tags:
@@ -158,7 +158,7 @@ A bit of CSS on top of that and now your users understand what's happening. You 
 
 #### 3.9 Kaminari
 
-Pagination is made using a [component](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/shared/_pagination.vue), client side, as well as adding a short snippet in the server side generated [JSON](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/api/admin/musicians/index.json.jbuilder). Drop this component in a "/components/shared" directory, and now all you have to do is calling this in a parent component when you need it:
+Pagination is made using a [component](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/shared/_pagination.vue), client side, as well as adding a short snippet in the server side generated [JSON](https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/api/admin/musicians/index.json.jbuilder). Drop this component in a "/components/shared" directory, and now all you have to do is calling this in some parent component when you need it:
 
 ```
 <pagination :pagination='pagination'></pagination>
@@ -185,10 +185,10 @@ You have to set things up exactly the same way you'd do in a classical app, the 
 
 Wow, that's quite a lot of stuff for a blog post! I really encourage you to clone the demo [repo](https://github.com/gbarillot/rails-vue-demo-app/) and play with the code.
 
-It's now time for to summarize some thoughts about building a SPA with Rails + Vue.js + Webpacker:
+Now, if I had to summarize my thoughts about building a Single Page Apps with Rails + Vue.js + Webpacker, three things would come up:
 
-- **Rails is an awesome starting point for a SPA**: I read sooooo many tutorials and blog posts about configuring Webpack that I was terrified with this one question: "how and where do I actually start?". Now, with Webpacker and Yarn included right in the Framework, there's nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   
+- **Rails is an awesome starting point for an SPA**: I read sooooo many tutorials and blog posts about configuring Webpack that I was terrified with this one question: "how and where do I actually start?". Now, with Webpacker and Yarn included right in the Framework, there's nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   
 
 - **Vue is a fabulous JS framework**: I feel like it has picked up the best ideas from React (Component based, Flux pattern) and the best ideas from Angular (templates with custom markup, eg: v-if, v-for...). Using Webpack to compile .vue files and Vuex, in the end, I managed to get something fully scalable as my code grows, and *really* maintainable with not that much of code, compared to a classical app.
 
-- **A Single Page App is quite a weird beast**: The Web has not been built for SPA's, neither browsers were. Simple things in the "old world" may become quite tricky very fast (pagination+ransack, or even a simple form submission!), as in the same time complicated things now become easy as pie (updating the other side of the UI on the fly when a variable is updated in the store, for example). What I *really* appreciate is that the Javascript section is now under control. There's no longer JQuery soup boiling in the asset pipeline, with nasty and untestable bugs simmering in. If it was for one argument, it would be this one. Yes, it's worth writing a few more lines of code at the beginning. In the end, you'll win.
+- **A Single Page App is quite a weird beast**: The Web has not been built for SPA's, neither browsers were. Simple things in the "old world" may become quite tricky very fast (pagination+ransack, or even a simple form submission!), as in the same time complicated things now become easy as pie (updating the other side of the UI on the fly when a variable is updated in the store, for example). What I *really* appreciate is that the Javascript section is now under control. There's no longer JQuery soup boiling in the asset pipeline, with nasty and untestable bugs simmering in. If it was for one argument, it would be this one. If you're really coding an "App" (not a "content based website", in this case, I'd advise to stick to regular server side generated HTML), it's worth writing a few more lines of code at the beginning. In the end, you'll win.
