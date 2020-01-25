@@ -30,10 +30,10 @@
 <div class='social'>
 <ul class='no-bullet'>
 <li>
-<a target="_blank" href="https://twitter.com/gbarillot"><i class='fa fa-twitter'></i>
+<a href="https://twitter.com/gbarillot" target="_blank"><i class='fa fa-twitter'></i>
 </a></li>
 <li>
-<a target="_blank" href="https://github.com/gbarillot"><i class='fa fa-github'></i>
+<a href="https://github.com/gbarillot" target="_blank"><i class='fa fa-github'></i>
 </a></li>
 <li>
 <script>
@@ -50,7 +50,7 @@
 </noscript>
 </li>
 <li>
-<a target="_blank" href="https://fr.linkedin.com/pub/guillaume-barillot/27/204/4b9"><i class='fa fa-linkedin'></i>
+<a href="https://fr.linkedin.com/pub/guillaume-barillot/27/204/4b9" target="_blank"><i class='fa fa-linkedin'></i>
 </a></li>
 </ul>
 </div>
@@ -114,8 +114,8 @@ The second planet was generating plain HTML directly out of servers. Search engi
 15
 16
 17</pre></td><td class="code"><pre>    <span class="nx">$</span> <span class="o">-&gt;</span>
-      <span class="c1">#... Some code here....
-</span>
+      <span class="c1">#... Some code here....</span>
+
       <span class="nx">$</span><span class="p">(</span><span class="s">'#tasksForm'</span><span class="p">).</span><span class="na">submit</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span>
         <span class="nx">e</span><span class="p">.</span><span class="na">preventDefault</span><span class="p">()</span>
         <span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
@@ -128,8 +128,8 @@ The second planet was generating plain HTML directly out of servers. Search engi
           <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">-&gt;</span>
             <span class="nx">$</span><span class="p">(</span><span class="s">'#tasks'</span><span class="p">).</span><span class="na">prepend</span><span class="p">(</span><span class="s">"&lt;li&gt;"</span><span class="o">+</span><span class="nx">data</span><span class="p">.</span><span class="na">task</span><span class="p">.</span><span class="na">name</span><span class="o">+</span><span class="s">"&lt;/li&gt;"</span><span class="p">)</span>
 
-      <span class="c1">#... MORE code....
-</span>
+      <span class="c1">#... MORE code....</span>
+
 </pre></td></tr></tbody></table>
 </div>
 
@@ -179,8 +179,8 @@ with JS. Let&rsquo;s start to clean things up:</p>
 15
 16
 17</pre></td><td class="code"><pre>    <span class="nx">$</span> <span class="o">-&gt;</span>
-      <span class="c1">#... Some code here....
-</span>
+      <span class="c1">#... Some code here....</span>
+
       <span class="nx">$</span><span class="p">(</span><span class="s">"[data-do='createTask']"</span><span class="p">).</span><span class="na">submit</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span>
         <span class="nx">e</span><span class="p">.</span><span class="na">preventDefault</span><span class="p">()</span>
         <span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
@@ -193,8 +193,8 @@ with JS. Let&rsquo;s start to clean things up:</p>
           <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">-&gt;</span>
             <span class="nx">$</span><span class="p">(</span><span class="s">"[data-is='tasks']"</span><span class="p">).</span><span class="na">prepend</span><span class="p">(</span><span class="s">"&lt;li&gt;"</span><span class="o">+</span><span class="nx">data</span><span class="p">.</span><span class="na">task</span><span class="p">.</span><span class="na">name</span><span class="o">+</span><span class="s">"&lt;/li&gt;"</span><span class="p">)</span>
 
-      <span class="c1">#... MORE code....
-</span>
+      <span class="c1">#... MORE code....</span>
+
 </pre></td></tr></tbody></table>
 </div>
 
@@ -231,8 +231,8 @@ of magic are going to help us.</p>
 9
 10
 11</pre></td><td class="code"><pre><span class="nx">$</span> <span class="o">-&gt;</span>
-  <span class="c1"># Listen to components' triggers
-</span>  <span class="nx">$</span><span class="p">(</span><span class="s">"[data-do]"</span><span class="p">).</span><span class="na">each</span> <span class="o">-&gt;</span>
+  <span class="c1"># Listen to components' triggers</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s">"[data-do]"</span><span class="p">).</span><span class="na">each</span> <span class="o">-&gt;</span>
     <span class="nx">that</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
     <span class="k">if</span> <span class="k">typeof</span> <span class="nx">that</span><span class="p">.</span><span class="na">data</span> <span class="s">'on'</span> <span class="o">!=</span> <span class="s">'undefined'</span>
       <span class="nx">that</span><span class="p">.</span><span class="na">on</span><span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="na">data</span><span class="p">(</span><span class="s">'on'</span><span class="p">),</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">-&gt;</span>
@@ -326,8 +326,8 @@ so we can call the method name of the Coffeescript class described in &ldquo;dat
           <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">-&gt;</span>
             <span class="nx">show</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 
-    <span class="c1"># Private
-</span>      <span class="nx">show</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="c1"># Private</span>
+      <span class="nx">show</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">-&gt;</span>
         <span class="nx">$</span><span class="p">(</span><span class="s">"[data-is='tasks']"</span><span class="p">).</span><span class="na">prepend</span><span class="p">(</span><span class="s">"&lt;li&gt;"</span><span class="o">+</span><span class="nx">data</span><span class="p">.</span><span class="na">task</span><span class="p">.</span><span class="na">name</span><span class="o">+</span><span class="s">"&lt;/li&gt;"</span><span class="p">)</span>
 
 </pre></td></tr></tbody></table>
@@ -366,13 +366,13 @@ by this author.
 </section>
 <section class='share'>
 <h4>Share this post</h4>
-<a class='icon-twitter' href='https://twitter.com/share?text=A better organisation for JS/Jquery code base using Rails and Coffeescript&amp;amp;url=http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/' onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+<a class='icon-twitter' href='https://twitter.com/share?text=A better organisation for JS/Jquery code base using Rails and Coffeescript&amp;amp;url=http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/' onclick='window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;'>
 <span class='hidden'>Twitter</span>
 </a>
-<a class='icon-facebook' href='https://www.facebook.com/sharer/sharer.php?u=http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/' onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+<a class='icon-facebook' href='https://www.facebook.com/sharer/sharer.php?u=http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/' onclick='window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;'>
 <span class='hidden'>Facebook</span>
 </a>
-<a class='icon-google-plus' href='https://plus.google.com/share?url=http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/' onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+<a class='icon-google-plus' href='https://plus.google.com/share?url=http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/' onclick='window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;'>
 <span class='hidden'>Google+</span>
 </a>
 </section>
@@ -398,7 +398,7 @@ by this author.
 <section class='copyright'>
 <a href='/'>I build stuff</a>
 &copy;
-2018
+2020
 </section>
 <section class='poweredby'>
 Casper theme powered by
