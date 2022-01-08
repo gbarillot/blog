@@ -27,7 +27,7 @@ real app, we should be able to handle this in a real world scenario
 
 - With Sprockets not being able to deal with ES6 code nor .vue files, we'll have to use Webpack. Perfect timing, it has just been integrated in Rails a few months ago.
 - The directory tree of Javacript files should be scalable and easy to grasp. Maintainability above everything.
-- Server side generated routes must match with the ones you'd get in regular Rails app, let's avoid headaches
+- Client side generated routes must match with the ones you'd get in regular Rails app, let's avoid headaches
 - Avoid installing JS dependencies and plugins, as much as possible, except for what's officially supported/required by Vue
 - Since most (actually: all) of the projects I work with are using Bootstrap, where it is required, let's use good ol' JQuery for AJAX requests
 - CSS will be handled by the asset pipeline, "the classical way". Although you can add CSS inside of your .vue files, I can't find a single use case where it would be <strike>useful</strike> a good idea in the Web apps I build
@@ -187,7 +187,7 @@ Wow, that's quite a lot of stuff for a blog post! I really encourage you to clon
 
 Now, if I had to summarize my thoughts about building a Single Page Apps with Rails + Vue.js + Webpacker, three things would come up:
 
-- **Rails is an awesome starting point for an SPA**: I read sooooo many tutorials and blog posts about configuring Webpack that I was terrified with this one question: "how and where do I actually start?". Now, with Webpacker and Yarn included right in the Framework, there's nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   
+- **Rails is an awesome starting point for an SPA**: I read sooooo many tutorials and blog posts about configuring Webpack that I was stuck with this one question: "how and where do I actually start?". Now, with Webpacker and Yarn included right in the Framework, there's nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   
 
 - **Vue is a fabulous JS framework**: I feel like it has picked up the best ideas from React (Component based, Flux pattern) and the best ideas from Angular (templates with custom markup, eg: v-if, v-for...). Using Webpack to compile .vue files and Vuex, in the end, I managed to get something fully scalable as my code grows, and *really* maintainable with not that much of code, compared to a classical app.
 
