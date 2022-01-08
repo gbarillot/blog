@@ -5,16 +5,16 @@
   <id>http://www.guillaume-barillot.com</id>
   <link href="http://www.guillaume-barillot.com"/>
   <link href="http://www.guillaume-barillot.com/tag/vue/feed.xml" rel="self"/>
-  <updated>2017-12-02T18:47:00+01:00</updated>
+  <updated>2017-12-02T17:47:00Z</updated>
   <author>
     <name>Guillaume</name>
   </author>
   <entry>
-    <title>How to organize your Vue files in a Rails 5.1 project using Webpack</title>
+    <title>How to organize a Vue app in a Rails project using Webpack</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/"/>
     <id>http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/</id>
-    <published>2017-12-02T18:47:00+01:00</published>
-    <updated>2018-04-07T23:05:22+02:00</updated>
+    <published>2017-12-02T17:47:00Z</published>
+    <updated>2020-01-25T22:29:44+01:00</updated>
     <author>
       <name>Guillaume</name>
     </author>

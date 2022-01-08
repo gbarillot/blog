@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>I build stuff: How to organize your Vue files in a Rails 5.1 project using Webpack</title>
+<title>I build stuff: How to organize a Vue app in a Rails project using Webpack</title>
 <meta content='So, you&amp;rsquo;re a Rails developer, and you started to play with Vue (maybe using the CDN / ES5 way?), everything looks so exciting, you&amp;rsquo;r...' name='description'>
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
@@ -30,10 +30,10 @@
 <div class='social'>
 <ul class='no-bullet'>
 <li>
-<a target="_blank" href="https://twitter.com/gbarillot"><i class='fa fa-twitter'></i>
+<a href="https://twitter.com/gbarillot" target="_blank"><i class='fa fa-twitter'></i>
 </a></li>
 <li>
-<a target="_blank" href="https://github.com/gbarillot"><i class='fa fa-github'></i>
+<a href="https://github.com/gbarillot" target="_blank"><i class='fa fa-github'></i>
 </a></li>
 <li>
 <script>
@@ -50,7 +50,7 @@
 </noscript>
 </li>
 <li>
-<a target="_blank" href="https://fr.linkedin.com/pub/guillaume-barillot/27/204/4b9"><i class='fa fa-linkedin'></i>
+<a href="https://fr.linkedin.com/pub/guillaume-barillot/27/204/4b9" target="_blank"><i class='fa fa-linkedin'></i>
 </a></li>
 </ul>
 </div>
@@ -61,7 +61,7 @@
 <main class='content' role='main'>
 <article class='post'>
 <header class='post-header'>
-<h1 class='post-title'>How to organize your Vue files in a Rails 5.1 project using Webpack</h1>
+<h1 class='post-title'>How to organize a Vue app in a Rails project using Webpack</h1>
 <section class='post-meta'>
 <time class='post-date' datetime='2017-12-02'>
 02 December 2017
@@ -70,7 +70,7 @@ on <a href='/tag/vue/'>vue</a>
 </section>
 </header>
 <section class='post-content'><p>So, you&rsquo;re a Rails developer, and you started to play with Vue (maybe using the CDN / ES5 way?), everything looks so exciting, you&rsquo;re even thinking about using it in your next project. Great! And then problems start to pop up. How do I structure my files? How do I implement I18n? What about authentication? Pagination?&hellip; Surprisingly,
-I did not found a lot of resources related to Vue+Webpack+Rails, so I thought it might be a good idea to share some of the solutions I came up with.   </p>
+I did not found a lot of resources related to Vue + Webpack + Rails, so I thought it might be a good idea to share some of the solutions I came up with.   </p>
 
 <p><strong>You&rsquo;ll find a demo app</strong> repository <a href="https://github.com/gbarillot/rails-vue-demo-app">here</a>, so you could play with the code and test it out.</p>
 
@@ -93,7 +93,7 @@ real app, we should be able to handle this in a real world scenario</li>
 <ul>
 <li>With Sprockets not being able to deal with ES6 code nor .vue files, we&rsquo;ll have to use Webpack. Perfect timing, it has just been integrated in Rails a few months ago.</li>
 <li>The directory tree of Javacript files should be scalable and easy to grasp. Maintainability above everything.</li>
-<li>Server side generated routes must match with the ones you&rsquo;d get in regular Rails app, let&rsquo;s avoid headaches</li>
+<li>Client side generated routes must match with the ones you&rsquo;d get in regular Rails app, let&rsquo;s avoid headaches</li>
 <li>Avoid installing JS dependencies and plugins, as much as possible, except for what&rsquo;s officially supported/required by Vue</li>
 <li>Since most (actually: all) of the projects I work with are using Bootstrap, where it is required, let&rsquo;s use good ol&rsquo; JQuery for AJAX requests</li>
 <li>CSS will be handled by the asset pipeline, &ldquo;the classical way&rdquo;. Although you can add CSS inside of your .vue files, I can&rsquo;t find a single use case where it would be <strike>useful</strike> a good idea in the Web apps I build</li>
@@ -142,7 +142,7 @@ real app, we should be able to handle this in a real world scenario</li>
 <li><p>components: will be structured quite close to what it would have been in the &ldquo;view&rdquo; rails dir, and will contains, well&hellip; components. Basically, your &ldquo;.vue&rdquo; files.</p></li>
 <li><p>filters: more or less like &ldquo;helpers&rdquo;, in the Rails world. I use it to format strings, dates&hellip; more about filters <a href="https://vuejs.org/v2/guide/filters.html">here</a>.</p></li>
 <li><p>vuex: the &ldquo;index.js&rdquo; file is used to register stores and is mostly populated with &ldquo;import&rdquo; statements. On the other hand, the stores directory hosts all, namespaced, stores.</p></li>
-<li><p>applications.js: the main JS application boot loader, where you setup what you&rsquo;re going to use in the app (router, I18n&hellip;). This is where you setup I18n, and I also use this file to setup JQuery&rsquo;s AJAX calls</p></li>
+<li><p>application.js: the main JS application boot loader, where you setup what you&rsquo;re going to use in the app (router, I18n&hellip;). This is where you setup I18n, and I also use this file to setup JQuery&rsquo;s AJAX calls</p></li>
 <li><p>routes.js: all of the routes for this app</p></li>
 </ul>
 
@@ -243,7 +243,7 @@ end
 
 <p>If you don&rsquo;t know what Vuex is, I would highly recommend to watch those <a href="https://youtu.be/dkFWOsKrPAI">2</a> <a href="https://youtu.be/kRI4YLMjgHQ">videos</a>. So, yes, let&rsquo;s use Vuex to handle all AJAX calls, as well as all state loads and modifications. If components may be seen like &ldquo;views + behaviour&rdquo;, you can see a store quite like &ldquo;controller + model&rdquo;. Controller because it handles the requests, and Model because it is manipulating the Data. Ok, ok, I know it&rsquo;s silly to try translating 1:1 Rails MVC to Vue, but if it may help you to understand how it globally works, let&rsquo;s see it this way to get started.</p>
 
-<p>Ok, so, what&rsquo;s in a Store? Basically: <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js">this</a>. Aside from the obvious actions + mutations, you will notice I added 2 extra mutations: progress and errors. This lead us directly to the next section:</p>
+<p>Ok, so, what&rsquo;s in a Store? Basically: <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/vuex/stores/musician_store.js">this</a>. Aside from the obvious actions and mutations, you will sometime notice 2 extra mutations: <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/vuex/stores/musician_store.js">progress and errors</a> when I use forms. This leads us directly to the next section:</p>
 
 <h4>3.8 User interaction</h4>
 
@@ -258,12 +258,12 @@ end
 
 <h4>3.9 Kaminari</h4>
 
-<p>Pagination is made using a <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/shared/_pagination.vue">component</a>, client side, as well as adding a short snippet in the server side generated <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/api/admin/musicians/index.json.jbuilder">JSON</a>. Drop this component in a &ldquo;/components/shared&rdquo; directory, and now all you have to do is calling this in a parent component when you need it:</p>
+<p>Pagination is made using a <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/javascript/packs/admin/components/shared/_pagination.vue">component</a>, client side, as well as adding a short snippet in the server side generated <a href="https://github.com/gbarillot/rails-vue-demo-app/blob/master/app/views/api/admin/musicians/index.json.jbuilder">JSON</a>. Drop this component in a &ldquo;/components/shared&rdquo; directory, and now all you have to do is calling this in some parent component when you need it:</p>
 <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>&lt;pagination :pagination='pagination'&gt;&lt;/pagination&gt;
 </pre></td></tr></tbody></table>
 </div>
 
-<p>(Hu hu, that&rsquo;s a lot of &ldquo;pagination&rdquo; for just one line, he? Don&rsquo;t worry, you&rsquo;ll found this pattern pretty common when passing data down to components).</p>
+<p>(Mmh, that&rsquo;s a lot of &ldquo;pagination&rdquo; for just one line. Don&rsquo;t worry, you&rsquo;ll found this pattern pretty common when passing data down to components).</p>
 
 <h4>3.10 Ransack and dynamic filters</h4>
 
@@ -286,12 +286,12 @@ end
 
 <p>Wow, that&rsquo;s quite a lot of stuff for a blog post! I really encourage you to clone the demo <a href="https://github.com/gbarillot/rails-vue-demo-app/">repo</a> and play with the code.</p>
 
-<p>It&rsquo;s now time for to summarize some thoughts about building a SPA with Rails + Vue.js + Webpacker:</p>
+<p>Now, if I had to summarize my thoughts about building a Single Page Apps with Rails + Vue.js + Webpacker, three things would come up:</p>
 
 <ul>
-<li><p><strong>Rails is an awesome starting point for a SPA</strong>: I read sooooo many tutorials and blog posts about configuring Webpack that I was terrified with this one question: &ldquo;how and where do I actually start?&rdquo;. Now, with Webpacker and Yarn included right in the Framework, there&rsquo;s nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   </p></li>
+<li><p><strong>Rails is an awesome starting point for an SPA</strong>: I read sooooo many tutorials and blog posts about configuring Webpack that I was stuck with this one question: &ldquo;how and where do I actually start?&rdquo;. Now, with Webpacker and Yarn included right in the Framework, there&rsquo;s nothing to fear, everything works out of the box. Testing is also improved, since you can now test each.and.every.part of the backend, no need to spin up utter slow layers like Selenium to test views output, and testing JSON is trivial.   </p></li>
 <li><p><strong>Vue is a fabulous JS framework</strong>: I feel like it has picked up the best ideas from React (Component based, Flux pattern) and the best ideas from Angular (templates with custom markup, eg: v-if, v-for&hellip;). Using Webpack to compile .vue files and Vuex, in the end, I managed to get something fully scalable as my code grows, and <em>really</em> maintainable with not that much of code, compared to a classical app.</p></li>
-<li><p><strong>A Single Page App is quite a weird beast</strong>: The Web has not been built for SPA&rsquo;s, neither browsers were. Simple things in the &ldquo;old world&rdquo; may become quite tricky very fast (pagination+ransack, or even a simple form submission!), as in the same time complicated things now become easy as pie (updating the other side of the UI on the fly when a variable is updated in the store, for example). What I <em>really</em> appreciate is that the Javascript section is now under control. There&rsquo;s no longer JQuery soup boiling in the asset pipeline, with nasty and untestable bugs simmering in. If it was for one argument, it would be this one. Yes, it&rsquo;s worth writing a few more lines of code at the beginning. In the end, you&rsquo;ll win.</p></li>
+<li><p><strong>A Single Page App is quite a weird beast</strong>: The Web has not been built for SPA&rsquo;s, neither browsers were. Simple things in the &ldquo;old world&rdquo; may become quite tricky very fast (pagination+ransack, or even a simple form submission!), as in the same time complicated things now become easy as pie (updating the other side of the UI on the fly when a variable is updated in the store, for example). What I <em>really</em> appreciate is that the Javascript section is now under control. There&rsquo;s no longer JQuery soup boiling in the asset pipeline, with nasty and untestable bugs simmering in. If it was for one argument, it would be this one. If you&rsquo;re really coding an &ldquo;App&rdquo; (not a &ldquo;content based website&rdquo;, in this case, I&rsquo;d advise to stick to regular server side generated HTML), it&rsquo;s worth writing a few more lines of code at the beginning. In the end, you&rsquo;ll win.</p></li>
 </ul>
 </section>
 <footer class='post-footer'>
@@ -306,13 +306,13 @@ by this author.
 </section>
 <section class='share'>
 <h4>Share this post</h4>
-<a class='icon-twitter' href='https://twitter.com/share?text=How to organize your Vue files in a Rails 5.1 project using Webpack&amp;amp;url=http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/' onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+<a class='icon-twitter' href='https://twitter.com/share?text=How to organize a Vue app in a Rails project using Webpack&amp;amp;url=http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/' onclick='window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;'>
 <span class='hidden'>Twitter</span>
 </a>
-<a class='icon-facebook' href='https://www.facebook.com/sharer/sharer.php?u=http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/' onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+<a class='icon-facebook' href='https://www.facebook.com/sharer/sharer.php?u=http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/' onclick='window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;'>
 <span class='hidden'>Facebook</span>
 </a>
-<a class='icon-google-plus' href='https://plus.google.com/share?url=http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/' onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+<a class='icon-google-plus' href='https://plus.google.com/share?url=http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/' onclick='window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;'>
 <span class='hidden'>Google+</span>
 </a>
 </section>
@@ -332,7 +332,7 @@ by this author.
 <section class='copyright'>
 <a href='/'>I build stuff</a>
 &copy;
-2018
+2020
 </section>
 <section class='poweredby'>
 Casper theme powered by

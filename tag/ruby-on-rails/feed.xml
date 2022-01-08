@@ -5,7 +5,7 @@
   <id>http://www.guillaume-barillot.com</id>
   <link href="http://www.guillaume-barillot.com"/>
   <link href="http://www.guillaume-barillot.com/tag/ruby-on-rails/feed.xml" rel="self"/>
-  <updated>2017-12-02T18:47:00+01:00</updated>
+  <updated>2017-12-02T17:47:00Z</updated>
   <author>
     <name>Guillaume</name>
   </author>
@@ -13,7 +13,7 @@
     <title>A better organisation for JS/Jquery code base using Rails and Coffeescript</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/"/>
     <id>http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/</id>
-    <published>2014-08-15T10:59:00+02:00</published>
+    <published>2014-08-15T08:59:00Z</published>
     <updated>2017-06-09T23:19:07+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -25,7 +25,7 @@ On this planet, apps were blazing fast, Javascript files were well organised</su
     <title>Switch from Selenium+Firefox to Poltergeist+Phantomjs and speed up your test suite </title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2013/03/23/Switch-from-SeleniumFirefox-to-PoltergeistPhantomjs-and-speed-up-your-test-suite-/"/>
     <id>http://www.guillaume-barillot.com/2013/03/23/Switch-from-SeleniumFirefox-to-PoltergeistPhantomjs-and-speed-up-your-test-suite-/</id>
-    <published>2013-03-23T01:00:00+01:00</published>
+    <published>2013-03-23T00:00:00Z</published>
     <updated>2015-06-18T23:27:53+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -39,7 +39,7 @@ Solve those 2</summary>
     <title>Paperclip caching and clean URLs or DragonFly on the fly image resizing ? Get the best of both worlds !</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2012/11/16/Paperclip-caching-and-clean-URLs-or-DragonFly-on-the-fly-image-resizing-Get-the-best-of-both-worlds-/"/>
     <id>http://www.guillaume-barillot.com/2012/11/16/Paperclip-caching-and-clean-URLs-or-DragonFly-on-the-fly-image-resizing-Get-the-best-of-both-worlds-/</id>
-    <published>2012-11-16T01:00:00+01:00</published>
+    <published>2012-11-16T00:00:00Z</published>
     <updated>2015-06-18T23:27:58+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -52,7 +52,7 @@ Let’s start with an example :# Paperclip</summary>
     <title>Gérer correctement les accents avec Ruby, Rails et upcase</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2012/08/14/Grer-correctement-les-accents-avec-Ruby-Rails-et-upcase/"/>
     <id>http://www.guillaume-barillot.com/2012/08/14/Grer-correctement-les-accents-avec-Ruby-Rails-et-upcase/</id>
-    <published>2012-08-14T02:00:00+02:00</published>
+    <published>2012-08-14T00:00:00Z</published>
     <updated>2015-06-18T23:28:09+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -65,7 +65,7 @@ Pas terrible, hein ? Une solution</summary>
     <title>Un premier avis sur Spree (plateforme Ecommerce pour Ruby on Rails)</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2011/11/02/Un-premier-avis-sur-Spree-plateforme-Ecommerce-pour-Ruby-on-Rails/"/>
     <id>http://www.guillaume-barillot.com/2011/11/02/Un-premier-avis-sur-Spree-plateforme-Ecommerce-pour-Ruby-on-Rails/</id>
-    <published>2011-11-02T01:00:00+01:00</published>
+    <published>2011-11-02T00:00:00Z</published>
     <updated>2015-06-18T23:29:28+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -76,7 +76,7 @@ Pas terrible, hein ? Une solution</summary>
     <title>Rulu 2011 : la communauté Ruby (on Rails) Européenne vaut vraiment le détour</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2011/07/02/Rulu-2011-la-communaut-Ruby-on-Rails-Europenne-vaut-vraiment-le-dtour/"/>
     <id>http://www.guillaume-barillot.com/2011/07/02/Rulu-2011-la-communaut-Ruby-on-Rails-Europenne-vaut-vraiment-le-dtour/</id>
-    <published>2011-07-02T02:00:00+02:00</published>
+    <published>2011-07-02T00:00:00Z</published>
     <updated>2015-06-18T23:29:38+02:00</updated>
     <author>
       <name>Guillaume</name>

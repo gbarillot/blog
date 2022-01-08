@@ -5,16 +5,16 @@
   <id>http://www.guillaume-barillot.com</id>
   <link href="http://www.guillaume-barillot.com"/>
   <link href="http://www.guillaume-barillot.com/feed.xml" rel="self"/>
-  <updated>2017-12-02T18:47:00+01:00</updated>
+  <updated>2017-12-02T17:47:00Z</updated>
   <author>
     <name>Guillaume</name>
   </author>
   <entry>
-    <title>How to organize your Vue files in a Rails 5.1 project using Webpack</title>
+    <title>How to organize a Vue app in a Rails project using Webpack</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/"/>
     <id>http://www.guillaume-barillot.com/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/</id>
-    <published>2017-12-02T18:47:00+01:00</published>
-    <updated>2018-04-07T23:05:22+02:00</updated>
+    <published>2017-12-02T17:47:00Z</published>
+    <updated>2020-01-25T22:29:44+01:00</updated>
     <author>
       <name>Guillaume</name>
     </author>
@@ -24,7 +24,7 @@
     <title>How to to make Vim to look like Atom</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2017/06/09/how-to-to-make-vim-to-look-like-atom/"/>
     <id>http://www.guillaume-barillot.com/2017/06/09/how-to-to-make-vim-to-look-like-atom/</id>
-    <published>2017-06-09T17:23:00+02:00</published>
+    <published>2017-06-09T15:23:00Z</published>
     <updated>2017-06-11T21:31:03+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -38,7 +38,7 @@ Moving back to Sublime text is not really a good idea, since I’m a bit afraid 
     <title>Good bye freelancing</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2015/06/22/good-bye-freelancing/"/>
     <id>http://www.guillaume-barillot.com/2015/06/22/good-bye-freelancing/</id>
-    <published>2015-06-22T23:34:00+02:00</published>
+    <published>2015-06-22T21:34:00Z</published>
     <updated>2017-12-02T18:01:48+01:00</updated>
     <author>
       <name>Guillaume</name>
@@ -51,7 +51,7 @@ that just bored me, at the same time. First of all was project</summary>
     <title>A better organisation for JS/Jquery code base using Rails and Coffeescript</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/"/>
     <id>http://www.guillaume-barillot.com/2014/08/15/a-better-organisation-for-your-js-using-rails-coffeescript/</id>
-    <published>2014-08-15T10:59:00+02:00</published>
+    <published>2014-08-15T08:59:00Z</published>
     <updated>2017-06-09T23:19:07+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -63,7 +63,7 @@ On this planet, apps were blazing fast, Javascript files were well organised</su
     <title>Fifteen years using linux... and I just switched to a Mac</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2014/02/22/Fifteen-years-using-linux-and-I-just-switched-to-a-Mac/"/>
     <id>http://www.guillaume-barillot.com/2014/02/22/Fifteen-years-using-linux-and-I-just-switched-to-a-Mac/</id>
-    <published>2014-02-22T01:00:00+01:00</published>
+    <published>2014-02-22T00:00:00Z</published>
     <updated>2015-06-22T23:33:58+02:00</updated>
     <author>
       <name>Guillaume</name>
@@ -74,7 +74,7 @@ On this planet, apps were blazing fast, Javascript files were well organised</su
     <title>Ma life (de développeur Freelance)</title>
     <link rel="alternate" href="http://www.guillaume-barillot.com/2013/07/18/Ma-life-de-dveloppeur-Freelance/"/>
     <id>http://www.guillaume-barillot.com/2013/07/18/Ma-life-de-dveloppeur-Freelance/</id>
-    <published>2013-07-18T02:00:00+02:00</published>
+    <published>2013-07-18T00:00:00Z</published>
     <updated>2015-06-19T16:49:58+02:00</updated>
     <author>
       <name>Guillaume</name>
