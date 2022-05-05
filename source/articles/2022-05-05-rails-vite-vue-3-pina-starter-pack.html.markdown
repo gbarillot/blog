@@ -1,6 +1,7 @@
 ---
-title: Rails + Vite + Vue 3 + Pina starter pack
+title: Rails + Vite + Vue 3 + Pinia starter pack
 date: 2022-05-05 14:36 UTC
+layout: post
 tags:
 - vue
 ---
