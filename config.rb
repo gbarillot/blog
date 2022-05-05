@@ -113,6 +113,7 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :git
+  deploy.remote   = 'git@github.com:gbarillot/gbarillot.github.io.git'
   deploy.branch = 'master'
   deploy.build_before = true
 end
