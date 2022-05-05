@@ -6,7 +6,7 @@ tags:
 - vue
 ---
 
-A blog post I published in 2017 about [how to organize your vue files in a Rails projet](https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/), ended with those words: "The Web has not been built for SPA's, neither browsers were. Simple things in the "old world" may become quite tricky very fast". Not only this remains true, but I should 
+A blog post I published in 2017 about [how to organize your vue files in a Rails project](https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/), ended with those words: "The Web has not been built for SPA's, neither browsers were. Simple things in the "old world" may become quite tricky very fast". Not only this remains true, but I should 
 also add "Rails has not been built for SPA's neither". Let's face it, there is an initial plumbing 
 phase where you have to setup all the basics if you want to use Rails + Vue & friends, and that's a real pain. 
 
