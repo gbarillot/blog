@@ -49,6 +49,6 @@ and everything will be handled automatically.
 ## How is it to work with a Rails + Vue stack since 2017?
 Well... It works! We recently onboard a junior dev (first job, no previous experience with Rails nor Vue) and he's been really productive in just a few weeks. Even at > 34K LOC, we're still far from any "maintainability wall". Our UI is fast as hell, adding new features is still a pleasure and all of this is realiable and easily testable. 
 
-Long story short: **an SPA doesn't have to be painfull**.
+Long story short: **a Single Page App doesn't have to be painfull**.
 
 Feel free to contribute, I'm open for questions or comments you may have! 
