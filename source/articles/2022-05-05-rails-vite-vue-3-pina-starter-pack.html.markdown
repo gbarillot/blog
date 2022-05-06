@@ -6,11 +6,9 @@ tags:
 - vue
 ---
 
-A blog post I published in 2017 about [how to organize your vue files in a Rails project](https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/), ended with those words: "The Web has not been built for SPA's, neither browsers were. Simple things in the "old world" may become quite tricky very fast". Not only this remains true, but I should 
-also add "Rails has not been built for SPA's neither". Let's face it, there is an initial plumbing 
-phase where you have to setup all the basics if you want to use Rails + Vue & friends, and that's a real pain. 
+Let's face it, if you start a new Rails + Vue project you'll have to face an initial plumbing phase only to setup all the basic stuff. That's usually not the most pleasant part... but I have a some good news: I did the boring work for you :-).
 
-Having built and deploy two fairly large apps (>34K LOC) using the opinions and tools exposed in the [previous blog post](https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/), I wanted to upgrade the whole stack up to 2022 standards and wrote a new starter pack you can find here: [https://github.com/gbarillot/rails-vue-demo-app](https://github.com/gbarillot/rails-vue-demo-app).
+Having built and deployed two fairly large apps (>34K LOC) using the opinions and tools exposed in a [previous blog post](https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/), it was time to upgrade the whole stack up to 2022 standards and I wrote a new starter pack you can find here: [https://github.com/gbarillot/rails-vue-demo-app](https://github.com/gbarillot/rails-vue-demo-app).
 
 ## What you'll get in the demo app 
 - Vite integration inside Rails through the Vite-Ruby gem
@@ -21,8 +19,7 @@ Having built and deploy two fairly large apps (>34K LOC) using the opinions and 
 - I18n setup
 - Front / Admin namespaces
 - Authentication with Devise
-- Pagination using Kaminari
-- Ransack search filters 
+- Pagination and Ransack working hand in hand with Vue router 
 - Websockets bindings with ActionCable
 - One basic CRUD example 
 - A Bootstrap like grid using native CSS Grid
@@ -40,7 +37,7 @@ Having built and deploy two fairly large apps (>34K LOC) using the opinions and 
 - Form animations are now 100% transparent, just use the "api" wrapper with the right HTML element
 and everything will be handled automatically. 
 - Thanks to Pinia, stores are now more compact and less verbose. They are also composable which could be usefull in some cases
-- The "components" directory is now named "views". I noticed it in a few Vue projects and that totally makes sense in order to bring Rails conventions into a SPA
+- The "components" directory is now named "views". I noticed it in some Vue projects and that totally makes sense in order to bring Rails conventions into a SPA
 - Although I didn't port big existing apps yet, I expect Vite to be way faster than Webpack. With a 
 5K LOC Vue app the sluginess of Webpack started to be a problem in development
 - Porting only the bootstrap grid (using native CSS Grid layout) lets you write custom CSS fast and efficiently without the whole Boostrap bloat. Anyway, feel free to use whatever CSS framework you prefer...
