@@ -14,7 +14,7 @@ Having built and deploy two fairly large apps (>34K LOC) using the opinions and 
 
 ## What you'll get in the demo app 
 - Vite integration inside Rails through the Vite-Ruby gem
-- Vue 3 + Pinia + Vue router + Vue I18n full setup and ready to roll
+- Vue 3 + Pinia full setup and ready to roll
 - Form animations, out of the box
 - 404 and 500 error pages wrapped around the API and routers
 - Server side + client side routers setup
