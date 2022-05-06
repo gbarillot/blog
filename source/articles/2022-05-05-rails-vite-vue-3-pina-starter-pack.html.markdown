@@ -29,7 +29,7 @@ Having built and deployed two fairly large apps (>34K LOC) using the opinions an
 - Vite is now the prefered compiler for Vue projects
 - Pinia replaces Vuex
 - Boostrap has gone (even more) bloated
-- CSS Grid layout browers support is now mainstream
+- CSS Grid layout browers support is [now mainstream](https://caniuse.com/css-grid)
 - Axios is largely used in SPA based projects
 
 ## Why is the 2022 update better? 
