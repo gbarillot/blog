@@ -6,7 +6,7 @@ tags:
 - vue
 ---
 
-Let's face it, if you start a new Rails + Vue project you'll have to face an initial plumbing phase only to setup all the basic stuff. That's usually not the most pleasant part... but I have a some good news: I did the boring work for you :-).
+Let's face it, if you start a new Rails + Vue project you'll have to deal with an initial plumbing phase only to setup all the basic stuff. That's usually not the most fun part... but I have some good news: I did the boring work for you :-).
 
 Having built and deployed two fairly large apps (>34K LOC) using the opinions and tools exposed in a [previous blog post](https://guillaume.barillot.me/2017/12/02/how-to-organize-your-vue-files-in-a-rails-5-1-project-using-webpack/), it was time to upgrade the whole stack up to 2022 standards and I wrote a new starter pack you can find here: [https://github.com/gbarillot/rails-vue-demo-app](https://github.com/gbarillot/rails-vue-demo-app).
 
@@ -18,7 +18,7 @@ Having built and deployed two fairly large apps (>34K LOC) using the opinions an
 - Server side + client side routers setup
 - I18n setup
 - Front / Admin namespaces
-- Authentication with Devise
+- Authentication using Devise
 - Pagination and Ransack working hand in hand with Vue router 
 - Websockets bindings with ActionCable
 - One basic CRUD example 
@@ -46,6 +46,6 @@ and everything will be handled automatically.
 ## How is it to work with a Rails + Vue stack since 2017?
 Well... It works! We recently onboard a junior dev (first job, no previous experience with Rails nor Vue) and he's been really productive in just a few weeks. Even at > 34K LOC, we're still far from any "maintainability wall". Our UI is fast as hell, adding new features is still a pleasure and all of this is realiable and easily testable. 
 
-Long story short: **a Single Page App doesn't have to be painfull**.
+Long story short: **a Single Page App doesn't have to be painful**.
 
 Feel free to contribute, I'm open for questions or comments you may have! 
